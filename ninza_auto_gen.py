@@ -14,13 +14,9 @@ from kiwoom.kiwoom_auto import *
 import pickle
 
 def auto_gen(gen_idx, list_idx, target_year):
-    kospi_list_df = fdr.StockListing('KOSPI')
 
-    test_symbol_list = []
-    for i in range(5):
-        test_symbol_list.append(kospi_list_df['Symbol'].values[i])
 
-    full_date_df = fdr.DataReader(test_symbol_list[1], target_year)
+    full_date_df = fdr.DataReader('KQ11', target_year)
 
     raw_tradingdays = list(full_date_df.index.values)
 
